@@ -1,2 +1,2 @@
-export {Loader} from './ui/Loader'
-export {Button} from './ui/button/Button'
+export { Loader } from './ui/Loader';
+export { Button } from './ui/button/Button';
