@@ -4,7 +4,7 @@ import { Controller } from 'react-hook-form';
 import { Text, TextInput, View } from 'react-native';
 import cn from 'clsx';
 
-const Field = <T extends Record<string, any>>({ control, name, rules, className, ...rest }: IField<T>): JSX.Element => {
+export const Field = <T extends Record<string, any>>({ control, name, rules, className, ...rest }: IField<T>): JSX.Element => {
 	return (
 		<Controller control={control} name={name} rules={rules} render={
 			({ field: { value, onChange, onBlur }, fieldState: { error } }) => <>
@@ -26,5 +26,3 @@ const Field = <T extends Record<string, any>>({ control, name, rules, className,
 
 	);
 };
-
-export default Field;

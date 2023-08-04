@@ -3,9 +3,8 @@ import { Pressable, Text, View } from 'react-native';
 import { useTypedNavigation } from '@/hooks/useTypedNavigation';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { IAuthFormData } from '@/shared/types/auth.interface';
-import { Button, Loader } from '@/components';
+import { Button, DismissKeyboard, Loader } from '@/components/ui';
 import AuthFields from '@/components/screens/auth/AuthFields';
-import { DismissKeyboard } from '@/components/ui/form-elements/field/DismissKeyboard';
 
 
 const Auth = () => {
