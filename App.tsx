@@ -1,18 +1,20 @@
-import { StatusBar } from 'expo-status-bar';
-import { SafeAreaProvider } from 'react-native-safe-area-context';
+import {StatusBar} from 'expo-status-bar';
+import {SafeAreaProvider} from 'react-native-safe-area-context';
 import Navigation from '@/navigation/Navigation';
-import { AuthProvider } from '@/providers/auth/AuthProvider';
+import {AuthProvider} from '@/providers/auth/AuthProvider';
+import {Toast} from "@/components/ui/Toast";
 
 export default function App() {
-	return (
-		<>
-			<AuthProvider>
-				<SafeAreaProvider>
-					<Navigation />
-				</SafeAreaProvider>
-			</AuthProvider>
-			<StatusBar style='light' />
-		</>
-	);
+    return (
+        <>
+            <AuthProvider>
+                <SafeAreaProvider>
+                    <Navigation/>
+                </SafeAreaProvider>
+            </AuthProvider>
+            <StatusBar style='light'/>
+            <Toast/>
+        </>
+    );
 }
 

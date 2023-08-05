@@ -1,8 +1,9 @@
-import React, { FC, useEffect, useState } from 'react';
-import { NavigationContainer, useNavigationContainerRef } from '@react-navigation/native';
-import { PrivateNavigator } from '@/navigation/PrivateNavigator';
-import { useAuth } from '@/hooks/useAuth';
-import { BottomMenu } from '@/components/layout/bottomMenu/BottomMenu';
+import React, {FC, useEffect, useState} from 'react';
+import {NavigationContainer, useNavigationContainerRef} from '@react-navigation/native';
+import {PrivateNavigator} from '@/navigation/PrivateNavigator';
+import {useAuth} from '@/hooks/useAuth';
+import {BottomMenu} from '@/components/layout/bottomMenu/BottomMenu';
+import {useCheckAuth} from "../providers/auth/useCheckAuth";
 
 
 const Navigation: FC = () => {
@@ -19,6 +20,8 @@ const Navigation: FC = () => {
 			navRef.removeListener('state', listener);
 		};
 	}, []);
+
+	useCheckAuth(currentRoute)
 
 	return (
 		<>
