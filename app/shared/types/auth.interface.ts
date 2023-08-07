@@ -1,4 +1,4 @@
-import {IUser} from "@/shared/types/ures.interface";
+import { IUser } from '@/shared/types/ures.interface';
 
 export interface IAuthFormData extends Pick<IUser, 'email' | 'password'> {
 }
@@ -14,7 +14,7 @@ export interface IToken {
 }
 
 export enum EnumAsyncStorage {
-USER
+USER= 'user'
 }
 
 export interface IAuthResponse extends IToken{
