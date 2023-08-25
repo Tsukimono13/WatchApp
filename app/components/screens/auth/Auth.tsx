@@ -16,8 +16,8 @@ const Auth = () => {
 	const { loginSync, registerSync, isLoading } = useAuthMutations(reset);
 
 	const onSubmit: SubmitHandler<IAuthFormData> = (data) => {
-		if(isReg) registerSync(data)
-		else loginSync(data)
+		if (isReg) registerSync(data);
+		else loginSync(data);
 	};
 
 	return (

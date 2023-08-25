@@ -9,7 +9,7 @@ import { IAuthFormData } from '@/shared/types/auth.interface';
 import { AuthService } from '@/services/auth/auth.service';
 
 export const useAuthMutations = (reset: UseFormReset<IAuthFormData>) => {
-	const { setUser } = useAuth()
+	const { setUser } = useAuth();
 
 	const { mutate: loginSync, isLoading: isLoginLoading } = useMutation(
 		['login'],
@@ -18,12 +18,12 @@ export const useAuthMutations = (reset: UseFormReset<IAuthFormData>) => {
 		{
 			onSuccess(data) {
 				setTimeout(() => {
-					reset()
-					setUser(data.user)
-				})
+					reset();
+					setUser(data.user);
+				});
 			}
 		}
-	)
+	);
 
 	const { mutate: registerSync, isLoading: isRegisterLoading } = useMutation(
 		['register'],
@@ -32,12 +32,12 @@ export const useAuthMutations = (reset: UseFormReset<IAuthFormData>) => {
 		{
 			onSuccess(data) {
 				setTimeout(() => {
-					reset()
-					setUser(data.user)
-				})
+					reset();
+					setUser(data.user);
+				});
 			}
 		}
-	)
+	);
 
 	return useMemo(
 		() => ({
@@ -46,5 +46,5 @@ export const useAuthMutations = (reset: UseFormReset<IAuthFormData>) => {
 			isLoading: isLoginLoading || isRegisterLoading
 		}),
 		[isLoginLoading, isRegisterLoading]
-	)
-}
+	);
+};
